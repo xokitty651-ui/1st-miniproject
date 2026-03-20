@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging In - AgriMarket</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .progress-animation {
+            animation: progress 3s linear forwards;
+            /* Add a subtle shadow for better visibility */
+            box-shadow: 0 0 5px rgba(27, 77, 42, 0.3);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        .spin-animation {
+            animation: spin 1.5s linear infinite;
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .float-animation-delay-1 {
+            animation: float 3s ease-in-out infinite 0.2s;
+        }
+        
+        .float-animation-delay-2 {
+            animation: float 3s ease-in-out infinite 0.4s;
+        }
+        
+        .float-animation-delay-3 {
+            animation: float 3s ease-in-out infinite 0.6s;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-primary-green to-secondary-green min-h-screen flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm"></div>
+    
+    <div class="relative z-10 w-full max-w-md">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-lg bg-opacity-90 text-center">
+            <div class="mb-8">
+                <div class="mx-auto bg-light-green w-20 h-20 rounded-full flex items-center justify-center mb-4 pulse-animation">
+                    <i class='bx bxs-leaf text-4xl text-primary-green spin-animation'></i>
+                </div>
+                <h1 class="text-3xl font-bold text-neutral-dark">AgriMarket</h1>
+                <p class="text-gray-600 mt-2">Agricultural Marketplace</p>
+            </div>
+
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-neutral-dark mb-4">Welcome Back!</h2>
+                <p class="text-gray-600 mb-6 text-lg">
+                    Logging in automatically with your account <span class="font-bold text-primary-green">Meow Bitch</span>
+                </p>
+                
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                    <div class="h-4 rounded-full progress-animation" style="background-color: #1B4D2A; width: 0%;"></div>
+                </div>
+                <p class="text-gray-500 text-sm" id="status-text">Preparing your session...</p>
+            </div>
+
+            <!-- Fun Floating Elements -->
+            <div class="grid grid-cols-4 gap-4 mb-6">
+                <div class="text-3xl float-animation">🌾</div>
+                <div class="text-3xl float-animation-delay-1">🚜</div>
+                <div class="text-3xl float-animation-delay-2">🛒</div>
+                <div class="text-3xl float-animation-delay-3">🌱</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-login as "Meow Bitch" after 3 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusText = document.getElementById('status-text');
+            
+            // Animate status text
+            setTimeout(() => {
+                statusText.textContent = 'Verifying credentials...';
+            }, 500);
+            
+            setTimeout(() => {
+                statusText.textContent = 'Setting up your profile...';
+            }, 1500);
+            
+            setTimeout(() => {
+                statusText.textContent = 'Almost there...';
+            }, 2500);
+            
+            // Set user data in localStorage
+            setTimeout(function() {
+                localStorage.setItem('agrimarket_token', 'dummy_token_for_meow_bitch');
+                localStorage.setItem('agrimarket_user', JSON.stringify({
+                    id: 'meow_bitch_user_id',
+                    name: 'Meow Bitch',
+                    email: 'cutie@meowbitch.in',
+                    role: 'buyer'
+                }));
+            }, 1000);
+            
+            // Redirect to the referring page or dashboard after 3 seconds
+            setTimeout(function() {
+                // Check if there's a referring page in sessionStorage
+                const referrer = sessionStorage.getItem('loginReferrer');
+                if (referrer) {
+                    // Clear the referrer so it doesn't redirect again
+                    sessionStorage.removeItem('loginReferrer');
+                    window.location.href = referrer;
+                } else {
+                    window.location.href = '/pages/dashboard.html';
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

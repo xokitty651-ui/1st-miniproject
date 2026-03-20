@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - AgriMarket</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="bg-neutral-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class='bx bxs-leaf text-primary-green text-3xl'></i>
+                    <span class="text-2xl font-bold text-primary-green">AgriMarket</span>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="marketplace.html" class="px-6 py-2 text-primary-green hover:text-secondary-green transition">← Back to Marketplace</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Container -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Order Summary -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                        <h2 class="text-3xl font-bold text-neutral-dark mb-8">Order Summary</h2>
+                        
+                        <div id="cart-items" class="space-y-4 mb-8">
+                            <p class="text-gray-600 text-center py-8">Loading cart items...</p>
+                        </div>
+
+                        <div class="border-t-2 border-gray-200 pt-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Subtotal:</span>
+                                <span id="subtotal" class="font-semibold">$0.00</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Shipping:</span>
+                                <span id="shipping" class="font-semibold">$10.00</span>
+                            </div>
+                            <div class="flex justify-between mb-4">
+                                <span class="text-gray-600">Tax (10%):</span>
+                                <span id="tax" class="font-semibold">$0.00</span>
+                            </div>
+                            <div class="border-t-2 border-gray-200 pt-4 flex justify-between">
+                                <span class="text-xl font-bold text-neutral-dark">Total:</span>
+                                <span id="total-amount" class="text-2xl font-bold text-primary-green">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Billing Information -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-neutral-dark mb-6">Billing Information</h3>
+                        
+                        <form id="billing-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-neutral-dark font-semibold mb-2">First Name</label>
+                                    <input type="text" id="first-name" title="First Name" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-green focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-neutral-dark font-semibold mb-2">Last Name</label>
+                                    <input type="text" id="last-name" title="Last Name" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-green focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-neutral-dark font-semibold mb-2">Email</label>
+                                <input type="email" id="email" title="Email" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-green focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-neutral-dark font-semibold mb-2">Address</label>
+                                <input type="text" id="address" title="Address" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-green focus:outline-none">
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-neutral-dark font-semibold mb-2">City</label>
+                                    <input type="text" id="city" title="City" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-green focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-neutral-dark font-semibold mb-2">State</label>
+                                    <input type="text" id="state" title="State" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-green focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-neutral-dark font-semibold mb-2">ZIP Code</label>
+                                <input type="text" id="zip" title="ZIP Code" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary-green focus:outline-none">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Payment Section -->
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg sticky top-24">
+                        <h3 class="text-2xl font-bold text-neutral-dark mb-6">Payment Method</h3>
+
+                        <!-- PayPal Button -->
+                        <div id="paypal-button-container" class="mb-6">
+                            <button id="paypal-button" class="w-full px-6 py-4 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition mb-4">
+                                <i class='bx bxl-paypal'></i> Pay with PayPal
+                            </button>
+                        </div>
+
+                        <!-- Card Payment (for future Stripe integration) -->
+                        <div class="border-t-2 border-gray-200 pt-6">
+                            <p class="text-gray-600 text-center text-sm">
+                                💳 Credit card payment coming soon
+                            </p>
+                        </div>
+
+                        <!-- Order Confirmation -->
+                        <div id="order-confirmation" class="hidden mt-6 p-4 bg-success-green bg-opacity-10 border-2 border-success-green rounded-lg">
+                            <h4 class="font-bold text-success-green mb-2">Order Confirmed! ✓</h4>
+                            <p class="text-sm text-gray-700 mb-4">Your order has been placed successfully.</p>
+                            <p class="text-xs text-gray-600 mb-4">Order Number: <span id="order-number" class="font-bold">---</span></p>
+                            <a href="dashboard.html" class="block w-full px-4 py-2 bg-primary-green text-white rounded-lg text-center font-semibold hover:bg-secondary-green transition">
+                                View Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="fixed bottom-4 right-4 space-y-2"></div>
+
+    <!-- PayPal SDK Script -->
+    <script src="https://www.paypal.com/sdk/js?client-id=demo_client_id&currency=USD"></script>
+
+    <script src="../js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - AgriMarket</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="bg-neutral-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class='bx bxs-leaf text-primary-green text-3xl'></i>
+                    <span class="text-2xl font-bold text-primary-green">AgriMarket</span>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="/pages/auto-login.html" class="px-6 py-2 text-primary-green hover:text-secondary-green transition">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Confirmation Container -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="mb-6">
+                        <i class='bx bx-check-circle text-success-green text-6xl'></i>
+                    </div>
+                    
+                    <h1 class="text-3xl font-bold text-neutral-dark mb-4">Order Placed Successfully!</h1>
+                    
+                    <p class="text-gray-600 text-lg mb-6">
+                        Thank you for your order. Your payment will be collected via <strong>Cash on Delivery (COD)</strong>.
+                    </p>
+                    
+                    <div class="bg-light-green rounded-lg p-6 mb-6">
+                        <p class="text-primary-green font-semibold">
+                            <i class='bx bx-info-circle'></i> Credit card payment is unavailable right now.
+                        </p>
+                        <p class="text-gray-600 mt-2">
+                            Our team will contact you shortly to confirm delivery details.
+                        </p>
+                    </div>
+                    
+                    <div class="border-t-2 border-gray-200 pt-6 mt-6">
+                        <p class="text-gray-600 mb-4">
+                            Order Number: <span id="order-number" class="font-bold text-primary-green">#AGM-000000</span>
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                            <a href="/pages/auto-login.html" 
+                               class="px-6 py-3 bg-primary-green text-white rounded-lg font-bold hover:bg-secondary-green transition text-center">
+                                View Orders
+                            </a>
+                            <a href="/pages/marketplace.html" 
+                               class="px-6 py-3 border-2 border-primary-green text-primary-green rounded-lg font-bold hover:bg-light-green transition text-center">
+                                Continue Shopping
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Generate a random order number
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderNumber = 'AGM-' + Math.floor(100000 + Math.random() * 900000);
+            document.getElementById('order-number').textContent = '#' + orderNumber;
+            
+            // Clear cart
+            localStorage.removeItem('cart');
+        });
+    </script>
+</body>
+</html>

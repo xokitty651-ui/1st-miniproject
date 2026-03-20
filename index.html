@@ -1,310 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriMarket - Direct Farmer to Buyer Marketplace</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/farming-animations.css">
+    <title>Login form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body class="bg-light-green">
-    <!-- Navigation Bar -->
-    <nav class="navbar sticky top-0 z-50 bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <i class='bx bxs-leaf text-primary-green text-3xl'></i>
-                    <span class="text-2xl font-bold text-primary-green">AgriMarket</span>
-                </div>
-                
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="text-neutral-dark hover:text-primary-green transition">Home</a>
-                    <a href="pages/marketplace.html" class="text-neutral-dark hover:text-primary-green transition">Marketplace</a>
-                    <a href="pages/dashboard.html" class="text-neutral-dark hover:text-primary-green transition">Dashboard</a>
-                    <a href="pages/about.html" class="text-neutral-dark hover:text-primary-green transition">About</a>
-                </div>
 
-                <div class="flex items-center space-x-4">
-                    <a href="pages/checkout.html" class="relative text-neutral-dark hover:text-primary-green transition" title="Shopping Cart" aria-label="Shopping Cart">
-                        <i class='bx bx-shopping-bag text-2xl'></i>
-                        <span class="absolute -top-2 -right-2 bg-error-red text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
-                    </a>
-                    <a href="pages/login.html" class="px-6 py-2 bg-primary-green text-white rounded-lg hover:bg-secondary-green transition">Login</a>
-                </div>
+<body>
+    <Div class="wrapper">
+        <form action="">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx  bx-user-circle'></i> 
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero relative overflow-hidden py-20 bg-gradient-to-r from-primary-green to-secondary-green text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="animate__animated animate__fadeInLeft">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6">Connect Farmers with Buyers</h1>
-                    <p class="text-xl mb-8 opacity-90">Direct marketplace for fresh agricultural products. No middlemen, better prices, real-time weather & soil data.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="pages/marketplace.html" class="px-8 py-3 bg-accent-orange text-white rounded-lg font-semibold hover:bg-opacity-90 transition text-center">
-                            Explore Marketplace
-                        </a>
-                        <a href="pages/register.html" class="px-8 py-3 bg-white text-primary-green rounded-lg font-semibold hover:bg-light-green transition text-center">
-                            Get Started
-                        </a>
-                    </div>
-                </div>
-                <div class="animate__animated animate__fadeInRight">
-                    <img src="assets/hero-image.jpg" alt="Fresh Crops" class="rounded-lg shadow-2xl w-full">
-                </div>
+            <div class="input-box">
+                <input type="text" placeholder="Password" required>
+                <i class='bx  bx-lock'></i> 
             </div>
-        </div>
-        <!-- Floating elements -->
-        <div class="absolute top-10 right-10 text-4xl opacity-20 animate-pulse">🌾</div>
-        <div class="absolute bottom-10 left-10 text-4xl opacity-20 animate-pulse">🌱</div>
-    </section>
-
-    <!-- Search Bar -->
-    <section class="py-8 bg-white shadow-md">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto">
-                <div class="relative">
-                    <input type="text" placeholder="Search for crops, farmers..." 
-                        class="w-full px-6 py-4 border-2 border-primary-green rounded-lg text-neutral-dark">
-                    <button class="absolute right-0 top-0 bg-primary-green text-white px-8 py-4 rounded-r-lg hover:bg-secondary-green transition" title="Search" aria-label="Search crops">
-                        <i class='bx bx-search text-xl'></i>
-                    </button>
-                </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <a href="#">Forgot password</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-20 bg-neutral-light">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-neutral-dark mb-16" data-aos="fade-up">Why Choose AgriMarket?</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="0">
-                    <div class="text-5xl mb-4">🌾</div>
-                    <h3 class="text-2xl font-bold text-primary-green mb-4">Direct Farmer Link</h3>
-                    <p class="text-gray-600">Connect directly with farmers, eliminating middlemen and ensuring better prices for both parties.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-5xl mb-4">🌤️</div>
-                    <h3 class="text-2xl font-bold text-primary-green mb-4">Weather Integration</h3>
-                    <p class="text-gray-600">Real-time weather data and forecasts to help farmers make informed decisions about their crops.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-5xl mb-4">💰</div>
-                    <h3 class="text-2xl font-bold text-primary-green mb-4">Secure Payments</h3>
-                    <p class="text-gray-600">PayPal integration ensures secure, reliable transactions for all marketplace purchases.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-5xl mb-4">🌱</div>
-                    <h3 class="text-2xl font-bold text-primary-green mb-4">Soil Information</h3>
-                    <p class="text-gray-600">Access detailed soil analysis and recommendations for optimal crop cultivation.</p>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-5xl mb-4">📦</div>
-                    <h3 class="text-2xl font-bold text-primary-green mb-4">Real-time Tracking</h3>
-                    <p class="text-gray-600">Track your orders in real-time from farm to your doorstep with complete transparency.</p>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="500">
-                    <div class="text-5xl mb-4">⭐</div>
-                    <h3 class="text-2xl font-bold text-primary-green mb-4">Ratings & Reviews</h3>
-                    <p class="text-gray-600">Transparent rating system to build trust between farmers and buyers in the community.</p>
-                </div>
+            <button type="Submit" class="btn">Login</button>
+            <div class="register.html">
+                <p>Don't have an account?<a href="#">Register</a></p> 
             </div>
-        </div>
-    </section>
+        </form>
+    </Div>
 
-    <!-- Trending Crops -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-neutral-dark mb-16" data-aos="fade-up">Trending Crops This Week</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="trending-crops">
-                <!-- Product cards will be inserted here by JavaScript -->
-            </div>
-        </div>
-    </section>
-cd "C:\Users\Sruu\OneDrive\Desktop\miniproject\backend"
-node server.js
-    <section class="py-20 bg-light-green">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-neutral-dark mb-16" data-aos="fade-up">How It Works</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
-                    <div class="bg-primary-green text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
-                    <h3 class="font-bold text-neutral-dark mb-2">Browse</h3>
-                    <p class="text-sm text-gray-600">Explore available crops from verified farmers</p>
-                </div>
+   
 
-                <div class="flex justify-center items-center text-primary-green text-3xl" data-aos="fade-up" data-aos-delay="100">→</div>
 
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-secondary-green text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
-                    <h3 class="font-bold text-neutral-dark mb-2">Select</h3>
-                    <p class="text-sm text-gray-600">Choose crops and add to your cart</p>
-                </div>
 
-                <div class="flex justify-center items-center text-primary-green text-3xl" data-aos="fade-up" data-aos-delay="300">→</div>
 
-                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-accent-orange text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
-                    <h3 class="font-bold text-neutral-dark mb-2">Pay</h3>
-                    <p class="text-sm text-gray-600">Secure payment through PayPal</p>
-                </div>
 
-                <div class="flex justify-center items-center text-primary-green text-3xl" data-aos="fade-up" data-aos-delay="500">→</div>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-8">
-                <div class="text-center" data-aos="fade-up" data-aos-delay="600">
-                    <div class="bg-success-green text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
-                    <h3 class="font-bold text-neutral-dark mb-2">Receive</h3>
-                    <p class="text-sm text-gray-600">Get fresh crops delivered</p>
-                </div>
 
-                <div class="flex justify-center items-center text-primary-green text-3xl" data-aos="fade-up" data-aos-delay="700">→</div>
-
-                <div class="text-center" data-aos="fade-up" data-aos-delay="800">
-                    <div class="bg-warning-yellow text-neutral-dark rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">5</div>
-                    <h3 class="font-bold text-neutral-dark mb-2">Rate</h3>
-                    <p class="text-sm text-gray-600">Review farmer & products</p>
-                </div>
-
-                <div class="flex justify-center items-center text-primary-green text-3xl" data-aos="fade-up" data-aos-delay="900">→</div>
-
-                <div class="text-center" data-aos="fade-up" data-aos-delay="1000">
-                    <div class="bg-primary-green text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">6</div>
-                    <h3 class="font-bold text-neutral-dark mb-2">Repeat</h3>
-                    <p class="text-sm text-gray-600">Buy again from favorites</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics -->
-    <section class="py-20 bg-primary-green text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                <div data-aos="fade-up">
-                    <h3 class="text-5xl font-bold mb-2">5,234+</h3>
-                    <p class="text-lg opacity-90">Active Farmers</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-5xl font-bold mb-2">12,456+</h3>
-                    <p class="text-lg opacity-90">Verified Buyers</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-5xl font-bold mb-2">45,678+</h3>
-                    <p class="text-lg opacity-90">Orders Completed</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-5xl font-bold mb-2">$2.5M+</h3>
-                    <p class="text-lg opacity-90">Total Revenue</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="py-20 bg-light-green text-center">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-neutral-dark mb-8" data-aos="fade-up">Ready to Join AgriMarket?</h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Whether you're a farmer looking to sell directly or a buyer seeking fresh products, AgriMarket is your solution.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-                <a href="pages/register.html?role=farmer" class="px-8 py-3 bg-primary-green text-white rounded-lg font-semibold hover:bg-secondary-green transition">
-                    Register as Farmer
-                </a>
-                <a href="pages/register.html?role=buyer" class="px-8 py-3 bg-secondary-green text-white rounded-lg font-semibold hover:bg-primary-green transition">
-                    Register as Buyer
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-neutral-dark text-white py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <h3 class="font-bold text-lg mb-4 flex items-center space-x-2">
-                        <i class='bx bxs-leaf'></i>
-                        <span>Farming Assisstant web Service</span>
-                    </h3>
-                    <p class="text-gray-400">Connecting farmers and buyers for a sustainable future.</p>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-primary-green hover:text-accent-orange transition" title="Facebook" aria-label="Follow on Facebook"><i class='bx bxl-facebook text-2xl'></i></a>
-                        <a href="#" class="text-primary-green hover:text-accent-orange transition" title="Twitter" aria-label="Follow on Twitter"><i class='bx bxl-twitter text-2xl'></i></a>
-                        <a href="#" class="text-primary-green hover:text-accent-orange transition" title="Instagram" aria-label="Follow on Instagram"><i class='bx bxl-instagram text-2xl'></i></a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4">Company</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-primary-green transition">About Us</a></li>
-                        <li><a href="#" class="hover:text-primary-green transition">Blog</a></li>
-                        <li><a href="#" class="hover:text-primary-green transition">Careers</a></li>
-                        <li><a href="#" class="hover:text-primary-green transition">Press</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-primary-green transition">Help Center</a></li>
-                        <li><a href="#" class="hover:text-primary-green transition">Contact Support</a></li>
-                        <li><a href="#" class="hover:text-primary-green transition">Documentation</a></li>
-                        <li><a href="#" class="hover:text-primary-green transition">API</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-primary-green transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-primary-green transition">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-primary-green transition">Cookie Policy</a></li>
-                        <li><a href="#" class="hover:text-primary-green transition">Disclaimer</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 AgriMarket. All rights reserved. Made with <span class="text-accent-orange">❤️</span> for farmers.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/farming-animations.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-    </script>
 </body>
+
 </html>
